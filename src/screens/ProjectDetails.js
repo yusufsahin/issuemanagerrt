@@ -26,26 +26,30 @@ const ProjectDetails = ({ navigation }) => {
         navigation.navigate('Projects');
     };
 
-    const handleDelete=()=>{
+    const handleDelete = () => {
         navigation.navigate('ProjectDelete')
     }
     return (
+
         <View style={styles.container}>
-        <Text style={styles.label}>Project Name:</Text>
-        <Text style={styles.value}>{currentProject.name}</Text>
+            <Text style={styles.label}>Project Id:</Text>
+            <Text style={styles.value}>{currentProject._id}</Text>
 
-        <Text style={styles.label}>Project Description:</Text>
-        <Text style={styles.value}>{currentProject.description}</Text>
+            <Text style={styles.label}>Project Name:</Text>
+            <Text style={styles.value}>{currentProject.name}</Text>
 
-        <Text style={styles.label}>Owner:</Text>
-        <Text style={styles.value}>{currentProject.owner}</Text>
+            <Text style={styles.label}>Project Description:</Text>
+            <Text style={styles.value}>{currentProject.description}</Text>
 
-        <Button title="Edit Project" onPress={handleEdit} />
-        <Button title="Back to Projects" onPress={handleBack} />
-        <Button title="Delete Project" onPress={()=>handleDelete()} />
-        <IssuesList projectId={currentProject.id} navigation={navigation} />
+            <Text style={styles.label}>Owner:</Text>
+            <Text style={styles.value}>{currentProject.owner}</Text>
 
-    </View>
+            <Button title="Edit Project" onPress={handleEdit} />
+            <Button title="Back to Projects" onPress={handleBack} />
+            <Button title="Delete Project" onPress={() => handleDelete()} />
+            <IssuesList projectId={currentProject.id} navigation={navigation} />
+
+        </View>
     );
 };
 const styles = StyleSheet.create({

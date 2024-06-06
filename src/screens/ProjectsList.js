@@ -39,7 +39,7 @@ const ProjectsList = ({ navigation }) => {
 
                 {projects && projects.map((project, index) => (
                     <ListItem
-                        key={project.id}
+                        key={project._id}
                         bottomDivider
                         containerStyle={[styles.listItem, { backgroundColor: index % 2 === 0 ? '#ffebcd' : '#ffe4e1' }]}
                        onPress={() => handleSelectProjectView(project)}
